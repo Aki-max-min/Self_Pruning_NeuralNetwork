@@ -128,10 +128,7 @@ This makes the project look like a **mini model-compression study**, not just a 
 self-pruning-neural-network-cifar10/
 ├── README.md
 ├── requirements.txt
-├── notebooks/
-│   └── self_pruning_cifar10.ipynb
-├── src/
-│   └── self_pruning_cifar10.py
+├── self_pruning_cifar10.ipynb
 ├── results/
 │   ├── lambda_vs_accuracy.png
 │   ├── lambda_vs_sparsity.png
@@ -141,8 +138,7 @@ self-pruning-neural-network-cifar10/
 │   ├── mean_gate_evolution.png
 │   ├── soft_vs_hard_accuracy.png
 │   └── confusion_matrix_best_model.png
-└── reports/
-    └── report.md
+└── report.md
 ```
 
 ---
