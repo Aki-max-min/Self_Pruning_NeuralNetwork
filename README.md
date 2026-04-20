@@ -158,12 +158,6 @@ python src/self_pruning_cifar10.py
 ### `notebooks/self_pruning_cifar10.ipynb`
 Colab-friendly notebook version of the project.
 
-### `src/self_pruning_cifar10.py`
-Full Python script for training, evaluation, hard pruning, and visualization.
-
-### `reports/report.md`
-Short report explaining the sparsity mechanism, architecture choice, and expected analysis.
-
 ### `results/`
 Generated plots and summary visuals after training.
 
