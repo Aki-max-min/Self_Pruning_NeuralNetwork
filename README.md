@@ -129,16 +129,6 @@ self-pruning-neural-network-cifar10/
 ├── README.md
 ├── requirements.txt
 ├── self_pruning_cifar10.ipynb
-├── results/
-│   ├── lambda_vs_accuracy.png
-│   ├── lambda_vs_sparsity.png
-│   ├── accuracy_vs_sparsity.png
-│   ├── gate_distribution_best_model.png
-│   ├── per_layer_sparsity.png
-│   ├── mean_gate_evolution.png
-│   ├── soft_vs_hard_accuracy.png
-│   └── confusion_matrix_best_model.png
-└── report.md
 ```
 
 ---
