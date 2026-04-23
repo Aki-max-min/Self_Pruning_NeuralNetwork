@@ -114,9 +114,9 @@ These values were chosen to produce a useful spread across the accuracy–sparsi
 
 | Lambda | Test Accuracy (%) | Sparsity (%) | Hard-Pruned Accuracy (%) | Hard-Pruned Sparsity (%) |
 |--------|-------------------|--------------|--------------------------|--------------------------|
-| 1e-4   | —                 | —            | —                        | —                        |
-| 5e-4   | —                 | —            | —                        | —                        |
-| 2e-3   | —                 | —            | —                        | —                        |
+| 1e-4   | 88.63             | 69.6         | 75.69                    | 69.6                     |
+| 5e-4   | 88.36             | 92.3         | 10.00                    | 92.3                     |
+| 2e-3   | 87.92             | 99.8         | 10.00                    | 99.8                     |
 
 *Run the notebook to populate these values.*
 
