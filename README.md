@@ -110,7 +110,7 @@ These values were chosen to produce a useful spread across the accuracy–sparsi
 - Hard-pruned test accuracy
 - Hard-pruned sparsity
 
-### Example results table
+### Results table
 
 | Lambda | Test Accuracy (%) | Sparsity (%) | Hard-Pruned Accuracy (%) | Hard-Pruned Sparsity (%) |
 |--------|-------------------|--------------|--------------------------|--------------------------|
@@ -118,7 +118,9 @@ These values were chosen to produce a useful spread across the accuracy–sparsi
 | 5e-4   | 88.36             | 92.3         | 10.00                    | 92.3                     |
 | 2e-3   | 87.92             | 99.8         | 10.00                    | 99.8                     |
 
-*Run the notebook to populate these values.*
+Result Analysis
+The experiment shows a clear sparsity–accuracy trade-off. With a moderate regularization strength of \(1\text{e-}4\), the model achieved the best practical balance, reaching **88.63% test accuracy** with **69.6% sparsity**, and the hard-pruned version still retained **75.69% accuracy**, which indicates that the learned gates captured meaningful structure rather than pruning arbitrarily. Increasing the sparsity penalty to \(5\text{e-}4\) pushed sparsity up to **92.3%**, but the hard-pruned accuracy collapsed to **10.00%**, showing that the model had become overly dependent on soft gating and could not survive aggressive thresholding. At \(2\text{e-}3\), sparsity reached **99.8%**, while hard-pruned accuracy remained at **10.00%**, confirming that excessive regularization destroys deployable performance. Overall, \(1\text{e-}4\) is the best final setting because it preserves strong accuracy while still producing a substantially sparse model.
+
 
 ---
 
