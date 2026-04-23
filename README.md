@@ -8,11 +8,11 @@
 
 ## Overview
 
-This project implements a **self-pruning neural network** for CIFAR-10 classification — built as part of the Tredence AI Engineering Internship case study. Rather than applying pruning as a separate post-training step, the model learns *during training* which connections are worth keeping and which can be discarded.
+This project implements a **self-pruning neural network** for CIFAR-10 classification built as part of the Tredence AI Engineering Internship case study. Rather than applying pruning as a separate post-training step, the model learns *during training* which connections are worth keeping and which can be discarded.
 
 The core idea is simple but powerful: pair every weight in the dense layers with a **learnable sigmoid gate**. The network is then trained to solve the classification task *and* minimize the number of active connections simultaneously, producing a sparse model without any manual pruning intervention.
 
-This is a controlled sparsity experiment. The focus is not just on getting a high accuracy number — it is on understanding how different levels of sparsity pressure affect the trade-off between classification performance and network compactness.
+This is a controlled sparsity experiment. The focus is not just on getting a high accuracy number  it is on understanding how different levels of sparsity pressure affect the trade-off between classification performance and network compactness.
 
 ---
 
@@ -167,7 +167,7 @@ In this framing, the generator learns to produce masks that are both compact and
 
 ### Why it was not used as the main solution
 
-A GAN-based pruning setup is harder to stabilize than a direct regularized objective. GAN training introduces adversarial dynamics between two networks, which adds hyperparameter complexity and can lead to mode collapse or oscillating masks. More importantly, the case study explicitly asks for a differentiable gate-based pruning mechanism *inside* the model itself — a controller network operating externally is architecturally further from that specification.
+A GAN-based pruning setup is harder to stabilize than a direct regularized objective. GAN training introduces adversarial dynamics between two networks, which adds hyperparameter complexity and can lead to mode collapse or oscillating masks. More importantly, the case study explicitly asks for a differentiable gate-based pruning mechanism *inside* the model itself  a controller network operating externally is architecturally further from that specification.
 
 For a focused, interpretable case study submission, direct sigmoid gating with a sparsity penalty is the cleaner and more aligned choice.
 
@@ -179,7 +179,7 @@ A future version of this project could combine both ideas:
 - Replace the per-layer gate parameters with a small **controller network** that generates gate logits or masks conditioned on the layer's weight statistics or activation patterns
 - Train a **critic** to reward compact sparse structures that maintain classification accuracy, effectively providing a learned sparsity budget signal
 
-This would reframe pruning as an **adversarial mask-learning problem** rather than a direct regularization problem. The controller would not just learn a fixed set of gate values — it would learn a general policy for proposing useful masks, potentially generalizing across model checkpoints or even different architectures.
+This would reframe pruning as an **adversarial mask-learning problem** rather than a direct regularization problem. The controller would not just learn a fixed set of gate values  it would learn a general policy for proposing useful masks, potentially generalizing across model checkpoints or even different architectures.
 
 Whether the added complexity is worth the gain depends on the application. For interpretable, reproducible research, the direct approach in this project is preferable. For large-scale compression pipelines where the sparsity budget needs to be dynamic or data-dependent, a learned controller becomes more attractive.
 
